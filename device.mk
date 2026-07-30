@@ -5,7 +5,11 @@
 #
 
 # Inherit from our proprietary files directory.
-$(call inherit-product, vendor/asus/sake/sake-vendor.mk)
+$(call inherit-product-if-exists, vendor/asus/rog5s/rog5s-vendor.mk)
+
+# Temporary debugging override: start ADBD on early boot without modifying security properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=adb
 
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
@@ -88,7 +92,6 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libsndmonitor \
     libspkrprot \
-    libssrec \
     libvolumelistener \
     sound_trigger.primary.lahaina
 
@@ -101,7 +104,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.sake
+    android.hardware.biometrics.fingerprint@2.3-service.rog5s
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
@@ -185,7 +188,7 @@ PRODUCT_PACKAGES += \
     vendor.display.config@2.0 \
     vendor.display.config@2.0.vendor \
     vendor.lineage.livedisplay@2.0-service-sdm \
-    vendor.lineage.livedisplay@2.0-service.sake \
+    vendor.lineage.livedisplay@2.0-service.rog5s \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.composer-service \
     vendor.qti.hardware.display.mapper@1.1.vendor \
@@ -199,7 +202,7 @@ PRODUCT_PACKAGES += \
 
 # Fastcharge
 PRODUCT_PACKAGES += \
-    vendor.lineage.fastcharge@1.0-service.sake
+    vendor.lineage.fastcharge@1.0-service.rog5s
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -228,7 +231,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.battery \
     fstab.default \
-    fstab.default.vendor_ramdisk \
     init.asus.rc \
     init.asus.recovery.rc \
     init.asus.usb.rc \
@@ -238,10 +240,14 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
-    init.sake.rc \
+    init.rog5s.rc \
     init.target.rc \
     ueventd.asus.rc \
     ueventd.qcom.rc
+
+PRODUCT_COPY_FILES += \
+    device/asus/rog5s/init/fstab.default:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default \
+    vendor/asus/rog5s/proprietary/vendor/etc/fstab.emmc:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.emmc
 
 # Keymaster
 PRODUCT_COPY_FILES += \
@@ -292,7 +298,8 @@ PRODUCT_USES_ESE := false
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    kernel/asus/sm8350
+    kernel/asus/sm8350 \
+    vendor/asus/rog5s
 
 # Networking
 PRODUCT_PACKAGES += \
@@ -380,7 +387,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.1-service.multihal \
     libsensorndkbridge \
-    sensors.sake
+    sensors.rog5s
 
 # Service Tracker
 PRODUCT_PACKAGES += \
@@ -428,7 +435,7 @@ PRODUCT_PACKAGES += \
 
 # Touch
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.sake
+    vendor.lineage.touch@1.0-service.rog5s
 
 # TrustedUI
 PRODUCT_PACKAGES += \
@@ -461,11 +468,11 @@ PRODUCT_COPY_FILES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator.service.sake
+    android.hardware.vibrator.service.rog5s
 
 # WFD
-PRODUCT_BOOT_JARS += \
-    WfdCommon
+# PRODUCT_BOOT_JARS += \
+#    WfdCommon
 
 PRODUCT_PACKAGES += \
     libwfdaac_vendor
@@ -483,8 +490,5 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     android.hardware.wifi.hostapd@1.0.vendor \
     hostapd \
-    libwifi-hal-ctrl \
-    libwifi-hal-qcom \
-    libwpa_client \
     wpa_supplicant \
     wpa_supplicant.conf

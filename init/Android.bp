@@ -45,8 +45,8 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.sake.rc",
-    src: "init.sake.rc",
+    name: "init.rog5s.rc",
+    src: "init.rog5s.rc",
     sub_dir: "init",
     vendor: true,
 }

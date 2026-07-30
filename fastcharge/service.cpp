@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "fastcharge@1.0-service.sake"
+#define LOG_TAG "fastcharge@1.0-service.rog5s"
 
 #include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>

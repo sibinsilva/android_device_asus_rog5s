@@ -14,10 +14,10 @@
 // limitations under the License.
 
 cc_binary {
-    name: "vendor.lineage.livedisplay@2.0-service.sake",
+    name: "vendor.lineage.livedisplay@2.0-service.rog5s",
     defaults: ["hidl_defaults"],
-    vintf_fragments: ["vendor.lineage.livedisplay@2.0-service.sake.xml"],
-    init_rc: ["vendor.lineage.livedisplay@2.0-service.sake.rc"],
+    vintf_fragments: ["vendor.lineage.livedisplay@2.0-service.rog5s.xml"],
+    init_rc: ["vendor.lineage.livedisplay@2.0-service.rog5s.rc"],
     relative_install_path: "hw",
     srcs: [
         "SunlightEnhancement.cpp",

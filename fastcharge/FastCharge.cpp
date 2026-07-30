@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "fastcharge@1.0-service.sake"
+#define LOG_TAG "fastcharge@1.0-service.rog5s"
 
 #define FASTCHARGE_DEFAULT_SETTING true
 #define FASTCHARGE_PATH "/sys/class/asuslib/slow_charging_enable"

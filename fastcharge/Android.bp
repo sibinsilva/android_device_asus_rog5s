@@ -1,8 +1,8 @@
 cc_binary {
-    name: "vendor.lineage.fastcharge@1.0-service.sake",
+    name: "vendor.lineage.fastcharge@1.0-service.rog5s",
     relative_install_path: "hw",
-    init_rc: ["vendor.lineage.fastcharge@1.0-service.sake.rc"],
-    vintf_fragments: ["vendor.lineage.fastcharge@1.0-service.sake.xml"],
+    init_rc: ["vendor.lineage.fastcharge@1.0-service.rog5s.rc"],
+    vintf_fragments: ["vendor.lineage.fastcharge@1.0-service.rog5s.xml"],
     vendor: true,
     shared_libs: [
         "libbase",

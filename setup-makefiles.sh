@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=sake
+DEVICE=rog5s
 VENDOR=asus
 
 # Load extract_utils and do some sanity checks
