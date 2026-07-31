@@ -27,3 +27,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=WW_I005D
 
 BUILD_FINGERPRINT := asus/WW_I005D/ASUS_I005D:13/TKQ1.220807.001/33.0210.0210.200:user/release-keys
+
+# Disable build-time VINTF manifest checks for development builds
+PRODUCT_ENFORCE_VINTF_MANIFEST := false
