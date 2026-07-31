@@ -101,6 +101,9 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := \
 # Enforce stock module load order for vendor modules
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat device/asus/rog5s/modules.load.vendor))
 
+# Force LTO=none to match OEM build and prevent kernel.mk ThinLTO override
+TARGET_KERNEL_LTO := none
+
 # Allow proprietary ELF files in PRODUCT_COPY_FILES
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
