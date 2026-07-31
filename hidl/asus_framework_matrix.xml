@@ -22,6 +22,7 @@
             <name>IGoodixFingerprintDaemon</name>
             <instance>default</instance>
         </interface>
+    </hal>
     <!-- Memtrack -->
     <hal format="hidl" optional="true">
         <name>android.hardware.memtrack</name>
