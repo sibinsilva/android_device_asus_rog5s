@@ -394,7 +394,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.servicetracker@1.2.vendor
 
 # Shipping API
-PRODUCT_SHIPPING_API_LEVEL := 30
+PRODUCT_SHIPPING_API_LEVEL := 33
 
 # Storage
 PRODUCT_CHARACTERISTICS := nosdcard

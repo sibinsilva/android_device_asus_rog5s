@@ -219,3 +219,6 @@ DEVICE_MATRIX_FILE := \
 
 ODM_MANIFEST_SKUS := eSE
 ODM_MANIFEST_ESE_FILES := $(DEVICE_PATH)/hidl/eSE_manifest.xml
+
+# Disable strict FCM level check for unused HALs
+VINTF_ENFORCE_NO_UNUSED_HALS := false
