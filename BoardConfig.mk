@@ -85,8 +85,7 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 # Stock uses gzip
 
 BOARD_KERNEL_IMAGE_NAME := Image
-# BOARD_USES_GENERIC_KERNEL_IMAGE := true
-TARGET_KERNEL_CONFIG := gki_defconfig vendor/lahaina_GKI.config vendor/lahaina_QGKI.config vendor/lahaina_consolidate.config vendor/ZS673KS-perf.config
+TARGET_KERNEL_CONFIG := kirisakura_defconfig
 TARGET_KERNEL_SOURCE := kernel/asus/sm8350
 TARGET_KERNEL_NO_GCC := true
 TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM_IAS=1 CROSS_COMPILE=aarch64-linux-android-
@@ -101,8 +100,9 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := \
 # Enforce stock module load order for vendor modules
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat device/asus/rog5s/modules.load.vendor))
 
-# Force LTO=none to match OEM build and prevent kernel.mk ThinLTO override
-TARGET_KERNEL_LTO := none
+# Force LTO=thin to match working Kirisakura build
+KERNEL_LTO := thin
+TARGET_KERNEL_LTO := thin
 
 # Allow proprietary ELF files in PRODUCT_COPY_FILES
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
