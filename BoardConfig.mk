@@ -112,7 +112,7 @@ TARGET_FS_CONFIG_GEN += device/asus/rog5s/config.fs
 # DTB / DTBO
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_PREBUILT_DTBIMAGE_DIR := device/asus/rog5s/prebuilts/dtb
-# BOARD_KERNEL_SEPARATED_DTBO := true
+BOARD_PREBUILT_DTBOIMAGE := device/asus/rog5s/prebuilts/dtbo.img
 
 # Partitions
 BOARD_BUILD_SUPER_IMAGE_BY_DEFAULT := true
