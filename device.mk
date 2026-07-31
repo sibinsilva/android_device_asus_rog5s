@@ -396,6 +396,9 @@ PRODUCT_PACKAGES += \
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 31
 
+# Disable build-time VINTF manifest checks for development builds
+PRODUCT_ENFORCE_VINTF_MANIFEST := false
+
 # Storage
 PRODUCT_CHARACTERISTICS := nosdcard
 

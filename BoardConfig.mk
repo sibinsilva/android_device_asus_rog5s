@@ -221,6 +221,4 @@ ODM_MANIFEST_SKUS := eSE
 ODM_MANIFEST_ESE_FILES := $(DEVICE_PATH)/hidl/eSE_manifest.xml
 
 # Disable build-time VINTF matrix enforcement for development builds
-PRODUCT_ENFORCE_VINTF_MANIFEST := false
-PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
 VINTF_ENFORCE_NO_UNUSED_HALS := false
