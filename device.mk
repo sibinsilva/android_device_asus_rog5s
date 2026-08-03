@@ -7,9 +7,10 @@
 # Inherit from our proprietary files directory.
 $(call inherit-product-if-exists, vendor/asus/rog5s/rog5s-vendor.mk)
 
-# Temporary debugging override: start ADBD on early boot without modifying security properties
+# Temporary debugging override: start ADBD on early boot without security prompts
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=adb
+    persist.sys.usb.config=adb \
+    ro.adb.secure=0
 
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
