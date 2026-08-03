@@ -1,8 +1,10 @@
-#
-# Copyright (C) 2023 The LineageOS Project
-#
-# SPDX-License-Identifier: Apache-2.0
-#
+# Early ADB Enablement for Bring-Up Diagnostics
+on init
+    setprop sys.usb.controller a600000.dwc3
+    setprop sys.usb.config adb
+
+on post-fs-data
+    start adbd
 
 on property:vendor.post_boot.parsed=1
     # cpuset parameters
