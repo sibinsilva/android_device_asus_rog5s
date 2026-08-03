@@ -73,6 +73,7 @@ BOARD_KERNEL_CMDLINE := \
     androidboot.bootdevice=1d84000.ufshc \
     androidboot.boot_devices=soc/1d84000.ufshc \
     msm_drm.dsi_display0=qcom,mdss_dsi_ams678_er2_fhd_plus_dsc_cmd: \
+    androidboot.selinux=permissive \
     buildvariant=userdebug
 
 BOARD_BOOT_HEADER_VERSION := 3
