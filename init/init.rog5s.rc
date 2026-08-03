@@ -1,8 +1,8 @@
-#
-# Copyright (C) 2023 The LineageOS Project
-#
-# SPDX-License-Identifier: Apache-2.0
-#
+# Enable Early ADB during bring-up on boot
+on boot
+    setprop sys.usb.controller a600000.dwc3
+    setprop sys.usb.configfs 1
+    setprop sys.usb.config adb
 
 on property:vendor.post_boot.parsed=1
     # cpuset parameters
