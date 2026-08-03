@@ -3,6 +3,9 @@ on boot
     setprop sys.usb.controller a600000.dwc3
     setprop sys.usb.configfs 1
     setprop sys.usb.config adb
+    # Bringup diagnostic: start adbd unconditionally before HAL services
+    # so ADB is reachable even if a HAL hangs during class_start
+    start adbd
 
 on property:vendor.post_boot.parsed=1
     # cpuset parameters
