@@ -12,6 +12,7 @@ BUILD_USERNAME := android-build
 BUILD_HOSTNAME := google.com
 
 include build/make/target/board/BoardConfigMainlineCommon.mk
+include vendor/lineage/config/BoardConfigLineage.mk
 
 # A/B
 AB_OTA_UPDATER := true
@@ -149,6 +150,10 @@ TARGET_COPY_OUT_ODM := odm
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := lahaina
+
+# Display
+SOONG_CONFIG_NAMESPACES += qtidisplay
+SOONG_CONFIG_qtidisplay += default gralloc4
 
 # Recovery
 # BOARD_INCLUDE_RECOVERY_DTBO := true
