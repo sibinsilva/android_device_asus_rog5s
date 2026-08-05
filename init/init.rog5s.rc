@@ -18,9 +18,9 @@ on init
     setprop sys.usb.configfs 1
     setprop sys.usb.controller a600000.dwc3
     setprop sys.usb.config adb
+    start adbd
 
 on post-fs-data
-    start adbd
 
 on property:vendor.post_boot.parsed=1
     # cpuset parameters
